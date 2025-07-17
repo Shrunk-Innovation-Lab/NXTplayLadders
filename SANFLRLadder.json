@@ -1,1 +1,106 @@
-
+[
+  {
+    "POS": "1",
+    "TEAM": "South Adelaide Reserves",
+    "P": 13,
+    "W": 10,
+    "L": 2,
+    "D": 1,
+    "B": 0,
+    "F": 0,
+    "AGST": 1018,
+    "PCT": 662.0,
+    "PTS": 21
+  },
+  {
+    "POS": "2",
+    "TEAM": "Glenelg Reserves",
+    "P": 13,
+    "W": 10,
+    "L": 2,
+    "D": 1,
+    "B": 0,
+    "F": 0,
+    "AGST": 1066,
+    "PCT": 735.0,
+    "PTS": 21
+  },
+  {
+    "POS": "3",
+    "TEAM": "North Adelaide Reserves",
+    "P": 13,
+    "W": 8,
+    "L": 5,
+    "D": 0,
+    "B": 0,
+    "F": 0,
+    "AGST": 997,
+    "PCT": 838.0,
+    "PTS": 16
+  },
+  {
+    "POS": "4",
+    "TEAM": "Eagles Reserves",
+    "P": 13,
+    "W": 6,
+    "L": 7,
+    "D": 0,
+    "B": 0,
+    "F": 0,
+    "AGST": 831,
+    "PCT": 763.0,
+    "PTS": 12
+  },
+  {
+    "POS": "5",
+    "TEAM": "Sturt Reserves",
+    "P": 13,
+    "W": 5,
+    "L": 8,
+    "D": 0,
+    "B": 0,
+    "F": 0,
+    "AGST": 965,
+    "PCT": 1072.0,
+    "PTS": 10
+  },
+  {
+    "POS": "6",
+    "TEAM": "Central District Reserves",
+    "P": 13,
+    "W": 5,
+    "L": 8,
+    "D": 0,
+    "B": 0,
+    "F": 0,
+    "AGST": 786,
+    "PCT": 908.0,
+    "PTS": 10
+  },
+  {
+    "POS": "7",
+    "TEAM": "Norwood Reserves",
+    "P": 13,
+    "W": 3,
+    "L": 9,
+    "D": 1,
+    "B": 0,
+    "F": 0,
+    "AGST": 705,
+    "PCT": 986.0,
+    "PTS": 7
+  },
+  {
+    "POS": "8",
+    "TEAM": "West Adelaide Reserves",
+    "P": 13,
+    "W": 3,
+    "L": 9,
+    "D": 1,
+    "B": 0,
+    "F": 0,
+    "AGST": 709,
+    "PCT": 1113.0,
+    "PTS": 7
+  }
+]
