@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NXTplay Ladders</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #121212;
+      --panel: #1c1c1c;
+      --text: #f0f0f0;
+      --subtext: #a0a0a0;
+      --accent: #9333ea;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+    .card:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center px-4 py-10">
+
+  <header class="mb-10 text-center">
+    <img src="https://i.imgur.com/lIOr2wQ.png" class="w-14 h-14 mx-auto mb-4 rounded-full" alt="NXTplay Logo" />
+    <h1 class="text-3xl font-bold text-white">NXTplay Ladder Hub</h1>
+    <p class="text-sm text-gray-400 mt-1">Select a competition to view the live ladder</p>
+  </header>
+
+  <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl">
+    <a href="https://shrunk-innovation-lab.github.io/NXTplayLadders/VFL.html" class="card block px-6 py-4 rounded-xl border border-gray-700 transition hover:border-purple-500">
+      <h2 class="text-xl font-semibold text-white">VFL</h2>
+      <p class="text-sm text-gray-400">Victorian Football League</p>
+    </a>
+    <a href="https://shrunk-innovation-lab.github.io/NXTplayLadders/VFLW.html" class="card block px-6 py-4 rounded-xl border border-gray-700 transition hover:border-purple-500">
+      <h2 class="text-xl font-semibold text-white">VFLW</h2>
+      <p class="text-sm text-gray-400">Victorian Football League Women’s</p>
+    </a>
+    <a href="https://shrunk-innovation-lab.github.io/NXTplayLadders/SANFL.html" class="card block px-6 py-4 rounded-xl border border-gray-700 transition hover:border-purple-500">
+      <h2 class="text-xl font-semibold text-white">SANFL</h2>
+      <p class="text-sm text-gray-400">South Australian National Football League</p>
+    </a>
+    <a href="https://shrunk-innovation-lab.github.io/NXTplayLadders/SANFLW.html" class="card block px-6 py-4 rounded-xl border border-gray-700 transition hover:border-purple-500">
+      <h2 class="text-xl font-semibold text-white">SANFLW</h2>
+      <p class="text-sm text-gray-400">SANFL Women’s League</p>
+    </a>
+    <a href="https://shrunk-innovation-lab.github.io/NXTplayLadders/SANFLR.html" class="card block px-6 py-4 rounded-xl border border-gray-700 transition hover:border-purple-500">
+      <h2 class="text-xl font-semibold text-white">SANFL Reserves</h2>
+      <p class="text-sm text-gray-400">SANFL Second Tier</p>
+    </a>
+  </main>
+
+  <footer class="mt-12 text-xs text-gray-500 text-center">
+    &copy; 2025 NXTplay | All rights reserved
+  </footer>
+
+</body>
+</html>
 
