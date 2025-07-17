@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VFLW Ladder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #121212;
+      --header-bg: rgba(18,18,18,0.8);
+      --panel-bg: rgba(27,27,27,0.6);
+      --text: #f0f0f0;
+      --subtext: #a0a0a0;
+      --border: rgba(255,255,255,0.1);
+      --accent: #9333ea;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+    .header { background: var(--header-bg); border-bottom: 1px solid var(--border); }
+    .panel { background: var(--panel-bg); border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(147, 51, 234, 0.1); }
+    .table-header { background: rgba(255,255,255,0.05); }
+    .table-row:hover { background: rgba(255,255,255,0.03); }
+    .top8 { border-left: 4px solid var(--accent); }
+    .normal { border-left: 4px solid transparent; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <header class="header sticky top-0 z-50 w-full px-4 py-3">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="https://i.imgur.com/lIOr2wQ.png" class="h-9 w-9 rounded-full" />
+        <div>
+          <h1 class="text-2xl font-bold text-white">VFLW LADDER</h1>
+          <p class="text-xs text-gray-400">2025 Season</p>
+        </div>
+      </div>
+      <div id="last-updated" class="text-xs text-right text-gray-400"></div>
+    </div>
+  </header>
+
+  <main class="flex flex-col items-center p-6">
+    <section class="panel w-full max-w-6xl rounded-2xl overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="text-xs uppercase table-header text-gray-400">
+            <tr>
+              <th class="px-4 py-3 text-center">Pos</th>
+              <th class="px-6 py-3">Team</th>
+              <th class="px-4 py-3 text-center">P</th>
+              <th class="px-4 py-3 text-center">W</th>
+              <th class="px-4 py-3 text-center">L</th>
+              <th class="px-4 py-3 text-center">D</th>
+              <th class="px-6 py-3 text-right">Pts</th>
+            </tr>
+          </thead>
+          <tbody id="ladder-body"></tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="mt-8 text-xs text-gray-400">@2025 | NXTplay | All rights reserved</footer>
+  </main>
+
+  <script>
+    async function fetchLadder() {
+      const url = "https://raw.githubusercontent.com/Shrunk-Innovation-Lab/NXTplayLadders/main/VFLWladder.json";
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        renderLadder(data);
+        document.getElementById("last-updated").textContent =
+          "Last Updated: " + new Date().toLocaleDateString('en-AU', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      } catch (e) {
+        console.error("Failed to load ladder:", e);
+      }
+    }
+
+    function renderLadder(data) {
+      const tbody = document.getElementById('ladder-body');
+      tbody.innerHTML = '';
+      data.forEach((team, idx) => {
+        const row = document.createElement('tr');
+        row.className = `table-row border-b ${idx < 8 ? 'top8' : 'normal'}`;
+        row.style.borderColor = 'var(--border)';
+        row.innerHTML = `
+          <td class="px-4 py-3 text-center text-gray-400">${team.POS}</td>
+          <td class="px-6 py-3 font-semibold text-white">${team.TEAM}</td>
+          <td class="px-4 py-3 text-center text-gray-300">${team.P}</td>
+          <td class="px-4 py-3 text-center text-gray-300">${team.W}</td>
+          <td class="px-4 py-3 text-center text-gray-300">${team.L}</td>
+          <td class="px-4 py-3 text-center text-gray-300">${team.D}</td>
+          <td class="px-6 py-3 text-right font-bold text-purple-400">${team.PTS}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchLadder);
+  </script>
+
+</body>
+</html>
