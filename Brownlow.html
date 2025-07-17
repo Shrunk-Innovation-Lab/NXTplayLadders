@@ -44,19 +44,19 @@
   <!-- Main -->
   <main class="p-4 max-w-7xl mx-auto">
     <div class="overflow-x-auto bg-gray-900 border border-gray-700 rounded-xl shadow">
-      <table class="min-w-full text-sm text-left">
+      <table class="min-w-full text-sm text-center">
         <thead class="uppercase text-gray-400 text-xs table-header">
           <tr>
             <th class="px-3 py-3">Year</th>
             <th class="px-3 py-3">Player</th>
             <th class="px-3 py-3">Team</th>
-            <th class="px-3 py-3 text-right">Votes</th>
-            <th class="px-3 py-3 text-right">Games</th>
-            <th class="px-3 py-3 text-right">3 Votes</th>
-            <th class="px-3 py-3 text-right">2 Votes</th>
-            <th class="px-3 py-3 text-right">1 Vote</th>
-            <th class="px-3 py-3 text-right">Games Polled</th>
-            <th class="px-3 py-3 text-right">Avg</th>
+            <th class="px-3 py-3">Votes</th>
+            <th class="px-3 py-3">Games</th>
+            <th class="px-3 py-3">3 Votes</th>
+            <th class="px-3 py-3">2 Votes</th>
+            <th class="px-3 py-3">1 Vote</th>
+            <th class="px-3 py-3">Games Polled</th>
+            <th class="px-3 py-3">Avg</th>
           </tr>
         </thead>
         <tbody id="brownlow-body" class="text-gray-300"></tbody>
@@ -93,16 +93,16 @@
         const tr = document.createElement("tr");
         tr.className = "border-b border-gray-700 table-row";
         tr.innerHTML = `
-          <td class="px-3 py-2 font-medium">${row.Year}</td>
-          <td class="px-3 py-2">${row.Player}</td>
-          <td class="px-3 py-2">${row.Team}</td>
-          <td class="px-3 py-2 text-right">${row.Votes}</td>
-          <td class="px-3 py-2 text-right">${row.GM}</td>
-          <td class="px-3 py-2 text-right">${row["3"] || ""}</td>
-          <td class="px-3 py-2 text-right">${row["2"] || ""}</td>
-          <td class="px-3 py-2 text-right">${row["1"] || ""}</td>
-          <td class="px-3 py-2 text-right">${row.GP || ""}</td>
-          <td class="px-3 py-2 text-right">${row.Ave}</td>
+          <td class="px-3 py-2 font-medium text-center">${row.Year}</td>
+          <td class="px-3 py-2 text-center">${row.Player}</td>
+          <td class="px-3 py-2 text-center">${row.Team}</td>
+          <td class="px-3 py-2 text-center">${row.Votes}</td>
+          <td class="px-3 py-2 text-center">${row.GM}</td>
+          <td class="px-3 py-2 text-center">${row["3"] ?? ""}</td>
+          <td class="px-3 py-2 text-center">${row["2"] ?? ""}</td>
+          <td class="px-3 py-2 text-center">${row["1"] ?? ""}</td>
+          <td class="px-3 py-2 text-center">${row.GP ?? ""}</td>
+          <td class="px-3 py-2 text-center">${row.Ave}</td>
         `;
         tbody.appendChild(tr);
       });
