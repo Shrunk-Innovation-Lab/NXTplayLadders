@@ -93,7 +93,8 @@
   <script>
     async function fetchLadder() {
       try {
-        const res = await fetch('https://raw.githubusercontent.com/Shrunk-Innovation-Lab/testsite/main/Ladders/VFLladder.json');
+        const res = await fetch('https://raw.githubusercontent.com/Shrunk-Innovation-Lab/NXTplayLadders/main/VFLladder.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const ladderData = await res.json();
         populateTable(ladderData);
         setLastUpdated();
